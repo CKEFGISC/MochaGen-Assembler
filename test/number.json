@@ -1,0 +1,9 @@
+{
+  "number": {
+    "id": "1",
+    "class": "integer",
+    "attr": {
+      "range": ["1", "10"]
+    }
+  }
+}
