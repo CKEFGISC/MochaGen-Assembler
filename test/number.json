@@ -3,7 +3,9 @@
     "id": "1",
     "class": "integer",
     "attr": {
-      "range": ["1", "10"]
+      "range": ["1", "10"],
+	  "is_odd": ["1"],
+	  "is_prime": ["0"]
     }
   }
 }
