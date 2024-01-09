@@ -14,14 +14,10 @@ struct object{
 
 vector<object> obj;
 
-std::ifstream f("../test/number.json");
-json num = json::parse(f);
-//open file and parse
-
-void ParseJson(){
+void ParseJson(json num){
 	for (json::iterator it = num.begin(); it != num.end(); ++it) {
 		object tmp;
-		tmp._category = it.key();
+		tmp._category = it.value()["category"];
 		tmp._class = it.value()["class"];
 		tmp._id = it.value()["id"];
 		for(json::iterator itt = it.value()["attr"].begin(); itt!=it.value()["attr"].end(); ++itt){
@@ -43,39 +39,44 @@ void ParseTest(){
 	}
 }
 
-void InitializeOutput(){
-	cout<<"#include<bits/stdc++.h>\n";
-	cout<<"#include<jngen.h>\n";
-	cout<<"using namespace std;\n";
+void ProcessNumber(obj x){
+	if(x._class=="integer"){
+		string l=x.attr["range"][0], r=x.attr["range"][1];
+		if(x.attr["is_prime"][0]=="1"){
+			if(x.attr["is_odd"][0]=="1"){
+				cout<<"int obj"<< x._id<<"= rndm.randomPrime("<<l<<","<< r<<");\n";
+				cout<<"cout<<obj"<<x._id<<";\n";
+			}else{
+				cout<<"int obj"<<x._id<<"=2;\n";
+				cout<<"cout<<obj"<<x._id<<";\n";
+			}
+		}else{
+			cout<<"int obj"<<x._id<<"=rnd.next("<<l<<","<<r<<");\n";
+			if(x.attr["is_odd"][0]=="1"){
+				cout<<"if(obj"<<x._id<<"%2==0) obj"<<x._id<<"+=1;\n";
+			}else if(x.attr["is_odd"][0]=="0"){
+				cout<<"if(obj"<<x._id<<"%2==1) obj"<<x._id<<"+=1;\n";
+			}
+			cout<<"cout<<obj"<<x._id<<";\n";
+		}
+	}else if(x._class=="float"){
+		cout<<"double obj"<<x._id<<"=rnd.nextf()*("<<x.attr["range"][1]<<"-"<<x.attr["range"][0]<<")+"<<x.attr["range"][0]<<";\n";
+		cout<<"cout<<obj"<<x._id<<";\n";
+	}
 }
 
+
 signed main(){
-	ParseJson();
-	int cnt=1;
+	std::ifstream f("../test/number.json");
+	json num = json::parse(f);
+	//open file and parse
+	ParseJson(num);
+	
 	for(auto x:obj){
 		if(x._category=="number"){
-			if(x._class=="integer"){
-				int l=stoi(x.attr["range"][0]);
-				int r=stoi(x.attr["range"][1]);
-				if(x.attr["is_prime"][0]=="1"){
-					if(x.attr["is_odd"][0]=="1"){
-						cout<<"int obj"<< cnt<<"= rndm.randomPrime("<<l<<","<< r<<");\n";
-						cout<<"cout<<obj"<<cnt<<";\n";
-					}else{
-						cout<<"int obj"<<cnt<<"=2;\n";
-						cout<<"cout<<obj"<<cnt<<";\n";
-					}
-				}else{
-					cout<<"int obj"<<cnt<<"=rnd.next("<<l<<","<<r<<");\n";
-					if(x.attr["is_odd"][0]=="1"){
-						cout<<"if(obj"<<cnt<<"%2==0) obj"<<cnt<<"+=1;\n";
-					}else if(x.attr["is_odd"][0]=="0"){
-						cout<<"if(obj"<<cnt<<"%2==1) obj"<<cnt<<"+=1;\n";
-					}
-					cout<<"cout<<obj"<<cnt<<";\n";
-				}
-			}
+			ProcessNumber(x);
 		}
+		cout<<"cout<<\'\\n\';";
 	}
 	cout<<"}";
 }
