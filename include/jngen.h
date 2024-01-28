@@ -26,7 +26,8 @@
 
   Follow the same link for docs and reference.
 */
-
+#ifndef JNGEN_HEADER_GUARD
+#define JNGEN_HEADER_GUARD
 #define JNGEN_VERSION 0.1
 
 // https://github.com/ifsmirnov/jngen/issues/5
@@ -7291,3 +7292,5 @@ using jngen::testSuites;
 #if __clang__major >= 5
 #pragma GCC diagnostic pop // -Wunused-lambda-capture
 #endif
+
+#endif // JNGEN_HEADER_GUARD
