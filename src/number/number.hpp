@@ -4,6 +4,7 @@
 #include<string>
 
 namespace MochaGen{
+    //template <typename T>
 	struct gen_number{
 		std::string _class;
 		int val=0;
@@ -12,14 +13,19 @@ namespace MochaGen{
 		std::pair<float, float> _rangef={1, 1e6};
 		int _parity=-1;
 		int _prime=-1;
+        bool prepared = 0;
 		gen_number(std::string __class): _class(__class){}
 
 		gen_number& range(int l, int r);
+        gen_number& rangef(int l, int r);
+
 		gen_number& parity(int par);
 		gen_number& prime(int __prime);
 		gen_number& prepare();
 	};
-}
-	std::ostream& operator << (std::ostream& o, MochaGen::gen_number& a);
+};
+
+int& operator << (int& i, MochaGen::gen_number& a);
+std::ostream& operator << (std::ostream& o, MochaGen::gen_number& a);
 
 #endif

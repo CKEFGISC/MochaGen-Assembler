@@ -4,6 +4,9 @@ project(mochagen-assembler)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3")
+# -DJNGEN_DECLARE_ONLY")
+
+SET(GCC_COVERAGE_COMPILE_FLAGS "--allow-multiple-definition")
 
 set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
 
@@ -15,6 +18,7 @@ set(ASSEMBLER_HEADERS_DIR ${PROJECT_SOURCE_DIR}/src/division)
 
 include_directories(${ASSEMBLER_INSTALL_INCLUDE_DIR})
 include_directories(${ASSEMBLER_HEADERS_DIR})
+add_definitions(-w)
 
 add_subdirectory(src)
 # add_subdirectory(test)

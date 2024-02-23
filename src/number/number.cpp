@@ -1,16 +1,23 @@
 #include<iostream>
 #include<string>
 #include"jngen.h"
+//#include<jngen>
+
 #include"number.hpp"
 using std::ostream, std::endl, std::cout;
 namespace MochaGen{
 	
 		gen_number& gen_number::range(int l, int r){
-			if(_class=="float") _rangef.first=l, _rangef.second=r;
+			if(_class=="float") cout<<"ERROR USE .range() INSTEAD";
 			else _range.first=l, _range.second=r;
 			return *this;
 		}
 
+		gen_number& gen_number::rangef(int l, int r){
+			if(_class=="float") _rangef.first=l, _rangef.second=r;
+			else cout<<"ERROR USE .range() INSTEAD";
+			return *this;
+		}
 		gen_number&  gen_number::parity(int par){
 			if(_class=="float") cout<<"ERROR, NO PARITY FOR FLOAT\n";
 			else _parity=par;
@@ -24,6 +31,7 @@ namespace MochaGen{
 		}
 
 		gen_number&  gen_number::prepare(){
+            if(prepared) return *this;
 			if(_class=="float"){
 				valf=rnd.nextf()*(_rangef.second-_rangef.first)+_rangef.first;
 			}else{
@@ -85,7 +93,17 @@ namespace MochaGen{
 			return *this;
 		}
 }
+
+int& operator << (int& i, MochaGen::gen_number& a){
+    if(!a.prepared) a.prepare();
+    
+    if(a._class=="float") cout<<"Assigned float to int";
+    else i = a.val;
+    
+	return i;
+}
 ostream& operator << (ostream& o, MochaGen::gen_number& a){
+    if(!a.prepared) a.prepare();
 	if(a._class=="float") o<<a.valf<<std::endl;
 	else o << a.val << std::endl;
 	return o;
