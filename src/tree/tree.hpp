@@ -2,7 +2,7 @@
 #define GEN_TREE_HPP
 #include<iostream>
 #include<string>
-#include"jngen.h"
+#include"../jngen/jngen.hpp"
 namespace MochaGen{
 	class gen_tree{
         Tree t;

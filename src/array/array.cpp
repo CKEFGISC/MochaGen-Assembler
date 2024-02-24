@@ -1,7 +1,7 @@
 #include<iostream>
 #include<string>
 #include<vector>
-#include"jngen.h"
+#include"../jngen/jngen.hpp"
 #include"array.hpp"
 #include"../number/number.hpp"
 #include"../graph/graph.hpp"

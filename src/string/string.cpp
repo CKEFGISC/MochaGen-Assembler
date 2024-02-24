@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include"jngen.h"
+#include"../jngen/jngen.hpp"
 #include"string.hpp"
 using std::ostream, std::endl, std::cout;
 namespace MochaGen{

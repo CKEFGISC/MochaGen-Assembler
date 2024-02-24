@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include"jngen.h"
+#include"../jngen/jngen.hpp"
 //#include<jngen>
 
 #include"number.hpp"

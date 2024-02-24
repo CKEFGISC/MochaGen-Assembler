@@ -2,7 +2,7 @@
 #define GEN_GRAPH_HPP
 #include<iostream>
 #include<string>
-#include"jngen.h"
+#include"../jngen/jngen.hpp"
 //#include<jngen>
 namespace MochaGen{
 	struct gen_graph{
