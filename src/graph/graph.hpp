@@ -15,6 +15,7 @@ namespace MochaGen{
         std::pair<int, int> vertex_weights = {0, 1e9+7};
         std::pair<int, int> edge_weights = {0, 1e9+7};
         bool prepared=0;
+        int n1=0, n2=0;
         bool is_acyclic = 0;
         bool is_directed = 0;
         bool is_connected = 0;
@@ -31,7 +32,7 @@ namespace MochaGen{
 		gen_graph& acyclic();
 		gen_graph& directed();
 		gen_graph& connected();
-		gen_graph& bipartite();
+		gen_graph& bipartite(int _n1, int _n2);
 		gen_graph& allow_loops();
         gen_graph& allow_multi();
         gen_graph& prepare();
