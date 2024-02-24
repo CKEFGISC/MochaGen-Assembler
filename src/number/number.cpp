@@ -30,6 +30,11 @@ namespace MochaGen{
 			return *this;
 		}
 
+	    gen_number& gen_number::end(std::string _endswith){
+    	    endswith=_endswith;
+			return *this;
+	    }
+
 		gen_number&  gen_number::prepare(){
             if(prepared) return *this;
 			if(_class=="float"){
@@ -104,7 +109,7 @@ int& operator << (int& i, MochaGen::gen_number& a){
 }
 ostream& operator << (ostream& o, MochaGen::gen_number& a){
     if(!a.prepared) a.prepare();
-	if(a._class=="float") o<<a.valf<<std::endl;
-	else o << a.val << std::endl;
+	if(a._class=="float") o<<a.valf<<a.endswith;
+	else o << a.val << a.endswith;
 	return o;
 }

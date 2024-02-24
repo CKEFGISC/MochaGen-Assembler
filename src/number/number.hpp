@@ -14,10 +14,14 @@ namespace MochaGen{
 		int _parity=-1;
 		int _prime=-1;
         bool prepared = 0;
+        std::string endswith="\n";
+
 		gen_number(std::string __class): _class(__class){}
 
 		gen_number& range(int l, int r);
         gen_number& rangef(int l, int r);
+
+        gen_number& end(std::string _endswith);
 
 		gen_number& parity(int par);
 		gen_number& prime(int __prime);

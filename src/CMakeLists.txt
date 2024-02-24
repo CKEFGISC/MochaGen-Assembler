@@ -25,4 +25,4 @@ target_link_libraries(assembler  jngen tree array geometry graph number string )
 #target_link_libraries(assembler graph)
 #target_link_libraries(assembler string)
 
-install(TARGETS assembler DESTINATION ${DIVISIBLE_INSTALL_BIN_DIR})
+install(TARGETS assembler DESTINATION ${ASSEMBLER_INSTALL_BIN_DIR})

@@ -15,7 +15,10 @@ namespace MochaGen{
         pattern=_pattern;
         return *this;
     }
-
+    gen_string& gen_string::end(std::string _endswith){
+        endswith=_endswith;
+        return *this;
+    }
     gen_string& gen_string::prepare(){
         if(is_palindrome){
             std::string half_string;
@@ -42,6 +45,6 @@ namespace MochaGen{
 };
 ostream& operator<< (ostream& o, MochaGen::gen_string& mocha_string){
     mocha_string.prepare();
-    o<<mocha_string.s<<endl;
+    o<<mocha_string.s<<mocha_string.endswith;
 	return o;
 }
