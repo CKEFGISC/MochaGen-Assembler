@@ -7,7 +7,7 @@
 #include<vector>
 using std::ostream, std::endl, std::cout;
 namespace MochaGen{
-    gen_graph::gen_graph(int _edge_count, int _vertex_count): edge_count(_edge_count), vertex_count(_vertex_count){}
+    gen_graph::gen_graph(int _vertex_count, int _edge_count): edge_count(_edge_count), vertex_count(_vertex_count){}
 
     gen_graph& gen_graph::weighted(int type){
         weighted_type=type;

@@ -24,7 +24,7 @@ namespace MochaGen{
         bool is_one_base=0;
 
 
-		gen_graph(int _edge_count, int _vertex_count);
+		gen_graph(int _vertex_count, int _edge_count);
         gen_graph& weighted(int type);
 		gen_graph& edge_weight(int l, int r);
         gen_graph& vertex_weight(int l, int r);
