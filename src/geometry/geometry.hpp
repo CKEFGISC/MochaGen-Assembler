@@ -2,21 +2,22 @@
 #define GEN_GEOMETRY_HPP
 #include<iostream>
 #include<string>
+#include"../jngen/jngen.hpp"
 
 namespace MochaGen{
-	class gen_geometry{
-
+	struct gen_geometry{
+        TArray<Point> T;
         int point_count=0;
-
+        bool is_convex_polygon=0;
+        bool in_general_position=0;
+        int xmin=0, xmax=1e4;
+        int ymin=0, ymax=1e4;
+        bool prepared=0;
 		gen_geometry(int _point_count): point_count(_point_count){}
-
-		gen_geometry& weight(int l, int r);
-		gen_geometry& acyclic();
-		gen_geometry& directed();
-		gen_geometry& connected();
-		gen_geometry& bipartite();
-		gen_geometry& allow_loops();
-        gen_geometry& allow_multi();
+        gen_geometry& xrange(int _xmin, int _xmax);
+        gen_geometry& yrange(int _ymin, int _ymax);
+        gen_geometry& convex_polygon();
+        gen_geometry& general_position();
         gen_geometry& prepare();
 	};
 }
