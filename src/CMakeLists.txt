@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.2)
-project(Assembler)
+project(MochaGen-Assembler)
 
 add_subdirectory(array)
 add_subdirectory(geometry)
@@ -8,6 +8,7 @@ add_subdirectory(number)
 add_subdirectory(string)
 add_subdirectory(jngen)
 add_subdirectory(tree)
+add_subdirectory(assembler)
 set(SOURCE_FILES main.cpp)
 
 #link_directories(${ASSEMBLER_INSTALL_INCLUDE_DIR})
@@ -15,9 +16,9 @@ set(SOURCE_FILES main.cpp)
 #SET_PROPERTY ( TARGET test_lib PROPERTY IMPORTED_LOCATION ${ASSEMBLER_INSTALL_INCLUDE_DIR}/libjngen.o )
 
 
-add_executable(assembler ${SOURCE_FILES})
+add_executable(mochagen-assembler ${SOURCE_FILES})
 #target_include_directories(src/number)
-target_link_libraries(assembler  jngen tree array geometry graph number string )
+target_link_libraries(mochagen-assembler  jngen tree array geometry graph number string assembler)
 
 
 #target_link_libraries(assembler ${ASSEMBLER_INSTALL_INCLUDE_DIR}/libjngen.a)
@@ -25,4 +26,4 @@ target_link_libraries(assembler  jngen tree array geometry graph number string )
 #target_link_libraries(assembler graph)
 #target_link_libraries(assembler string)
 
-install(TARGETS assembler DESTINATION ${ASSEMBLER_INSTALL_BIN_DIR})
+install(TARGETS mochagen-assembler DESTINATION ${ASSEMBLER_INSTALL_BIN_DIR})
