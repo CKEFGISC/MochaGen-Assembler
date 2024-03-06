@@ -18,12 +18,13 @@ namespace MochaGen{
 			else cout<<"ERROR USE .range() INSTEAD";
 			return *this;
 		}
-		gen_number&  gen_number::parity(int par){
-			if(_class=="float") cout<<"ERROR, NO PARITY FOR FLOAT\n";
-			else _parity=par;
-			return *this;
-		}
 
+		gen_number& gen_number::is_odd(){
+      _parity+=2;
+    }
+		gen_number& gen_number::is_even(){
+      _parity+=1;
+    }
 		gen_number&  gen_number::prime(int __prime){
 			if(_class=="float") cout<<"ERROR, NO PRIME FOR FLOAT\n";
 			else _prime=__prime;
@@ -40,6 +41,7 @@ namespace MochaGen{
 			if(_class=="float"){
 				valf=rnd.nextf()*(_rangef.second-_rangef.first)+_rangef.first;
 			}else{
+        if(_parity==2) _parity=-1;
 				if(_prime==1){
 					if(_parity==1||_parity==0){
 						val=rndm.randomPrime(fmax(2, _range.first), _range.second);
