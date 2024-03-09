@@ -1,25 +1,27 @@
-#include<iostream>
-#include<string>
-#include<vector>
-#include"../jngen/jngen.hpp"
-#include"array.hpp"
-#include"../number/number.hpp"
-#include"../graph/graph.hpp"
-#include"../string/string.hpp"
-#include"../tree/tree.hpp"
-#include"../geometry/geometry.hpp"
+#include "array.hpp"
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+#include "../geometry/geometry.hpp"
+#include "../graph/graph.hpp"
+#include "../jngen/jngen.hpp"
+#include "../number/number.hpp"
+#include "../string/string.hpp"
+#include "../tree/tree.hpp"
 using std::ostream, std::endl, std::cout;
-namespace MochaGen{
-    /*
-    template<typename T>
-    gen_array<T>::gen_array(int _length, T _content): length(_length), content(_content), content_value(_length){}
-    template<typename T>
-    gen_array<T>& gen_array<T>::prepare(){
-        for(int i=0; i<length; i++){
-            content_value[i]=content;
-            content_value[i].prepare();
-        }
-    }*/
+namespace MochaGen {
+/*
+template<typename T>
+gen_array<T>::gen_array(int _length, T _content): length(_length), content(_content), content_value(_length){}
+template<typename T>
+gen_array<T>& gen_array<T>::prepare(){
+    for(int i=0; i<length; i++){
+        content_value[i]=content;
+        content_value[i].prepare();
+    }
+}*/
 
 }
 /*
@@ -30,5 +32,5 @@ ostream& operator << (ostream& o, MochaGen::gen_array<T>& a){
         //a.content.prepare();
         o << a.content_value[i].len << std::endl;
     }
-	return o;
+        return o;
 }*/

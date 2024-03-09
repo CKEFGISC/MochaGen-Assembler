@@ -11,19 +11,18 @@ add_subdirectory(tree)
 add_subdirectory(assembler)
 set(SOURCE_FILES main.cpp)
 
-#link_directories(${ASSEMBLER_INSTALL_INCLUDE_DIR})
-#ADD_LIBRARY ( test_lib STATIC IMPORTED )
-#SET_PROPERTY ( TARGET test_lib PROPERTY IMPORTED_LOCATION ${ASSEMBLER_INSTALL_INCLUDE_DIR}/libjngen.o )
+# link_directories(${ASSEMBLER_INSTALL_INCLUDE_DIR})
+# ADD_LIBRARY ( test_lib STATIC IMPORTED )
+# SET_PROPERTY ( TARGET test_lib PROPERTY IMPORTED_LOCATION ${ASSEMBLER_INSTALL_INCLUDE_DIR}/libjngen.o )
 
+# target_include_directories(src/number)
 
-add_executable(mochagen-assembler ${SOURCE_FILES})
-#target_include_directories(src/number)
-target_link_libraries(mochagen-assembler  jngen tree array geometry graph number string assembler)
+# target_link_libraries(assembler ${ASSEMBLER_INSTALL_INCLUDE_DIR}/libjngen.a)
 
+# target_link_libraries(assembler graph)
+# target_link_libraries(assembler string)
 
-#target_link_libraries(assembler ${ASSEMBLER_INSTALL_INCLUDE_DIR}/libjngen.a)
-
-#target_link_libraries(assembler graph)
-#target_link_libraries(assembler string)
-
-install(TARGETS mochagen-assembler DESTINATION ${ASSEMBLER_INSTALL_BIN_DIR})
+# sample executable for the assembler
+add_executable(assembler-sample ${SOURCE_FILES})
+target_link_libraries(assembler-sample jngen tree array geometry graph number string assembler)
+install(TARGETS assembler-sample DESTINATION ${ASSEMBLER_INSTALL_BIN_DIR})
