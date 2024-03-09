@@ -4,7 +4,7 @@
 #include <string>
 
 #include "../jngen/jngen.hpp"
-#include "number.hpp"
+#include "../number/number.hpp"
 
 using std::ostream, std::endl, std::cout;
 namespace MochaGen {

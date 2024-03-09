@@ -3,6 +3,7 @@ project(jngen C CXX)
 
 set(SOURCE_FILES
     jngen.hpp
+    jngen.cpp
 )
 
 add_library(jngen SHARED STATIC ${SOURCE_FILES})
