@@ -5,8 +5,7 @@
 #include <iostream>
 #include <string>
 
-#include "assembler.h"
-#include "jngen/jngen.hpp"
+#include "assembler.hpp"
 
 using namespace MochaGen;
 using std::cout, std::endl;

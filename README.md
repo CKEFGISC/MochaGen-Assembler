@@ -25,6 +25,10 @@ To use this CMake project, follow these steps:
 5. Build the project: `make install`.
 6. Create Your Own `generator.cpp`, and link the `libassembler.a` to compile your generator.
 
+```
+g++ -o your_generator generator.cpp -std=c++17 -I/<path_to_project>/include/ -L/<path_to_project>/lib/ -lassembler
+```
+
 Make sure to replace `<executable_name>` with the actual name of the generated executable.
 
 Note: You may need to install any required dependencies before building the project.

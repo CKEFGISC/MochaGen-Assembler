@@ -1,6 +1,0 @@
-#include"number/number.hpp"
-#include"graph/graph.hpp"
-#include"array/array.hpp"
-#include"string/string.hpp"
-#include"tree/tree.hpp"
-#include"geometry/geometry.hpp"

@@ -11,13 +11,15 @@ add_subdirectory(tree)
 
 # For use of the assembler library in other projects
 set(LIB_SOURCE_FILES
-    assembler.h
+    assembler.hpp
     assembler.cpp
 )
 
-add_library(assembler ${LIB_SOURCE_FILES})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+add_library(assembler STATIC ${LIB_SOURCE_FILES})
 target_link_libraries(assembler jngen tree array geometry graph number string)
 install(TARGETS assembler DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
+install(FILES assembler.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})
 
 # For direct use of the assembler library
 set(SOURCE_FILES

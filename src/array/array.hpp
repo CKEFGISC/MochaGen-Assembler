@@ -5,13 +5,6 @@
 #include <string>
 #include <vector>
 
-#include "../geometry/geometry.hpp"
-#include "../graph/graph.hpp"
-#include "../jngen/jngen.hpp"
-#include "../number/number.hpp"
-#include "../string/string.hpp"
-#include "../tree/tree.hpp"
-#include "array.hpp"
 using std::ostream, std::endl, std::cout;
 
 namespace MochaGen {
