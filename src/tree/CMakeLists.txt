@@ -6,7 +6,7 @@ set(SOURCE_FILES
     tree.cpp
 )
 
-add_library(tree SHARED STATIC ${SOURCE_FILES})
+add_library(tree OBJECT ${SOURCE_FILES})
 
 install(TARGETS tree DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
 install(FILES tree.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})

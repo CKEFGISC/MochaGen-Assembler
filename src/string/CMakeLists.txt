@@ -6,7 +6,7 @@ set(SOURCE_FILES
     string.cpp
 )
 
-add_library(string SHARED STATIC ${SOURCE_FILES})
+add_library(string OBJECT ${SOURCE_FILES})
 
 install(TARGETS string DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
 install(FILES string.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})

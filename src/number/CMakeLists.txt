@@ -6,7 +6,7 @@ set(SOURCE_FILES
     number.cpp
 )
 
-add_library(number SHARED STATIC ${SOURCE_FILES})
+add_library(number OBJECT ${SOURCE_FILES})
 install(TARGETS number DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
 install(FILES number.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})
 set_source_files_properties(number.cpp PROPERTIES COMPILE_FLAGS -DJNGEN_DECLARE_ONLY)

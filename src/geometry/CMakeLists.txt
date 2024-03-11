@@ -6,7 +6,7 @@ set(SOURCE_FILES
     geometry.cpp
 )
 
-add_library(geometry SHARED STATIC ${SOURCE_FILES})
+add_library(geometry OBJECT ${SOURCE_FILES})
 
 install(TARGETS geometry DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
 install(FILES geometry.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})

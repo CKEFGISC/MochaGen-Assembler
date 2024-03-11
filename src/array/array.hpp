@@ -29,4 +29,5 @@ struct gen_array {
 
 template <typename T>
 ostream& operator<<(ostream& o, MochaGen::gen_array<T>& a);
+
 #endif

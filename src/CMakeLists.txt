@@ -16,8 +16,18 @@ set(LIB_SOURCE_FILES
 )
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-add_library(assembler STATIC ${LIB_SOURCE_FILES})
-target_link_libraries(assembler jngen tree array geometry graph number string)
+add_library(assembler STATIC
+    $<TARGET_OBJECTS:array>
+    $<TARGET_OBJECTS:geometry>
+    $<TARGET_OBJECTS:graph>
+    $<TARGET_OBJECTS:number>
+    $<TARGET_OBJECTS:string>
+    $<TARGET_OBJECTS:jngen>
+    $<TARGET_OBJECTS:tree>
+    ${LIB_SOURCE_FILES}
+)
+
+# target_link_libraries(assembler jngen tree array geometry graph number string)
 install(TARGETS assembler DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
 install(FILES assembler.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})
 

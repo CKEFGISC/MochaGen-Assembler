@@ -6,7 +6,7 @@ set(SOURCE_FILES
     jngen.cpp
 )
 
-add_library(jngen SHARED STATIC ${SOURCE_FILES})
+add_library(jngen OBJECT ${SOURCE_FILES})
 
 install(TARGETS jngen DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
 install(FILES jngen.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})

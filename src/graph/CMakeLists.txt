@@ -6,7 +6,7 @@ set(SOURCE_FILES
     graph.cpp
 )
 
-add_library(graph SHARED STATIC ${SOURCE_FILES})
+add_library(graph OBJECT ${SOURCE_FILES})
 
 install(TARGETS graph DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
 install(FILES graph.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})
