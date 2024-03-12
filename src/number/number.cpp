@@ -24,8 +24,8 @@ gen_number& gen_number::rangef(int l, int r) {
     return *this;
 }
 
-gen_number& gen_number::is_odd() { _parity += 2; }
-gen_number& gen_number::is_even() { _parity += 1; }
+gen_number& gen_number::is_odd(bool _is_odd=true) { _parity += 2; }
+gen_number& gen_number::is_even(bool _is_even=true) { _parity += 1; }
 gen_number& gen_number::prime(int __prime) {
     if (_class == "float")
         cout << "ERROR, NO PRIME FOR FLOAT\n";

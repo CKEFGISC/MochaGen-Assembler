@@ -23,8 +23,8 @@ struct gen_number {
 
     gen_number& end(std::string _endswith);
 
-    gen_number& is_odd();
-    gen_number& is_even();
+    gen_number& is_odd(bool _is_odd);
+    gen_number& is_even(bool _is_even);
     //		gen_number& parity(int par);
 
     gen_number& prime(int __prime);
