@@ -17,8 +17,8 @@ struct gen_geometry {
     gen_geometry(int _point_count) : point_count(_point_count) {}
     gen_geometry& xrange(int _xmin, int _xmax);
     gen_geometry& yrange(int _ymin, int _ymax);
-    gen_geometry& convex_polygon();
-    gen_geometry& general_position();
+    gen_geometry& convex_polygon(bool _convex_polygon = true);
+    gen_geometry& general_position(bool _general_position = true);
     gen_geometry& prepare();
 };
 }  // namespace MochaGen

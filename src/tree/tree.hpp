@@ -19,7 +19,7 @@ class gen_tree {
     gen_tree& weighted(int type);
     gen_tree& edge_weight(int l, int r);
     gen_tree& vertex_weight(int l, int r);
-    gen_tree& binary();
+    gen_tree& binary(bool is_binary = true);
     gen_tree& prepare();
 };
 }  // namespace MochaGen

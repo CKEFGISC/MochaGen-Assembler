@@ -18,12 +18,12 @@ gen_geometry& gen_geometry::yrange(int _ymin, int _ymax) {
     ymax = _ymax;
     return *this;
 }
-gen_geometry& gen_geometry::convex_polygon() {
-    is_convex_polygon = true;
+gen_geometry& gen_geometry::convex_polygon(bool _convex_polygon = true) {
+    is_convex_polygon = _convex_polygon;
     return *this;
 }
-gen_geometry& gen_geometry::general_position() {
-    in_general_position = true;
+gen_geometry& gen_geometry::general_position(bool _general_position = true) {
+    in_general_position = _general_position;
     return *this;
 }
 

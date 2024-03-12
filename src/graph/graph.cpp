@@ -26,16 +26,16 @@ gen_graph& gen_graph::vertex_weight(int l, int r) {
     vertex_weights.second = r;
     return *this;
 };
-gen_graph& gen_graph::acyclic() {
-    is_acyclic = true;
+gen_graph& gen_graph::acyclic(bool _acyclic = true) {
+    is_acyclic = _acyclic;
     return *this;
 };
-gen_graph& gen_graph::directed() {
-    is_directed = true;
+gen_graph& gen_graph::directed(bool _directed = true) {
+    is_directed = _directed;
     return *this;
 };
-gen_graph& gen_graph::connected() {
-    is_connected = true;
+gen_graph& gen_graph::connected(bool _connected = true) {
+    is_connected = _connected;
     return *this;
 };
 gen_graph& gen_graph::bipartite(int _n1, int _n2) {
@@ -48,12 +48,12 @@ gen_graph& gen_graph::bipartite(int _n1, int _n2) {
     n2 = _n2;
     return *this;
 };
-gen_graph& gen_graph::allow_loops() {
-    loops_allowed = true;
+gen_graph& gen_graph::allow_loops(bool _loops = true) {
+    loops_allowed = _loops;
     return *this;
 };
-gen_graph& gen_graph::allow_multi() {
-    multi_allowed = true;
+gen_graph& gen_graph::allow_multi(bool _multi = true) {
+    multi_allowed = _multi;
     return *this;
 };
 gen_graph& gen_graph::one_base() {

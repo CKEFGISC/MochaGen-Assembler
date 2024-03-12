@@ -22,8 +22,8 @@ gen_tree& gen_tree::vertex_weight(int l, int r) {
     vertex_weights.second = r;
     return *this;
 };
-gen_tree& gen_tree::binary() {
-    is_binary = true;
+gen_tree& gen_tree::binary(bool _binary = true) {
+    is_binary = _binary;
     return *this;
 };
 gen_tree& gen_tree::prepare() {

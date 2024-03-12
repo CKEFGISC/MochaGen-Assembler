@@ -29,12 +29,12 @@ struct gen_graph {
     gen_graph& weighted(int type);
     gen_graph& edge_weight(int l, int r);
     gen_graph& vertex_weight(int l, int r);
-    gen_graph& acyclic();
-    gen_graph& directed();
-    gen_graph& connected();
+    gen_graph& acyclic(bool _acyclic = true);
+    gen_graph& directed(bool _directed = true);
+    gen_graph& connected(bool _connected = true);
     gen_graph& bipartite(int _n1, int _n2);
-    gen_graph& allow_loops();
-    gen_graph& allow_multi();
+    gen_graph& allow_loops(bool _loops = true);
+    gen_graph& allow_multi(bool _multi = true);
     gen_graph& prepare();
     gen_graph& one_base();
 };
