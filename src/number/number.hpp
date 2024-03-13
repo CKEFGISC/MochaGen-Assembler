@@ -27,7 +27,7 @@ struct gen_number {
     gen_number& is_even(bool _is_even);
     //		gen_number& parity(int par);
 
-    gen_number& prime(int __prime);
+    gen_number& prime(bool __prime);
     gen_number& prepare();
 };
 };  // namespace MochaGen
