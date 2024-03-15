@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
 project(MochaGen-Assembler)
 
-add_subdirectory(mcg_array)
+add_subdirectory(array)
 add_subdirectory(geometry)
 add_subdirectory(graph)
 add_subdirectory(number)
-add_subdirectory(mcg_string)
+add_subdirectory(string)
 add_subdirectory(jngen)
 add_subdirectory(tree)
 
