@@ -6,6 +6,7 @@
 #include "../jngen/jngen.hpp"
 namespace MochaGen {
 class gen_tree {
+   public:
     Tree t;
     int vertex_count = 0;
     int weighted_type = 0;
