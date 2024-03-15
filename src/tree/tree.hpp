@@ -16,7 +16,7 @@ class gen_tree {
     std::pair<int, int> edge_weights = {0, 1e9 + 7};
     std::pair<int, int> weights = {0, 1e9 + 7};
 
-    gen_tree(int _vertex_count) : vertex_count(_vertex_count) {}
+    gen_tree(int _vertex_count) : vertex_count(_vertex_count), edge_count(_vertex_count-1) {}
     gen_tree& weighted(int type);
     gen_tree& edge_weight(int l, int r);
     gen_tree& vertex_weight(int l, int r);
