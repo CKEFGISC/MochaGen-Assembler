@@ -24,8 +24,14 @@ gen_number& gen_number::rangef(int l, int r) {
     return *this;
 }
 
-gen_number& gen_number::is_odd(bool _is_odd=true) {if(_is_odd) _parity += 2; return *this;}
-gen_number& gen_number::is_even(bool _is_even=true) {if(_is_even) _parity += 1; return *this;}
+gen_number& gen_number::is_odd(bool _is_odd = true) {
+    if (_is_odd) _parity += 2;
+    return *this;
+}
+gen_number& gen_number::is_even(bool _is_even = true) {
+    if (_is_even) _parity += 1;
+    return *this;
+}
 gen_number& gen_number::prime(bool __prime) {
     if (_class == "float")
         cout << "ERROR, NO PRIME FOR FLOAT\n";
@@ -72,11 +78,11 @@ gen_number& gen_number::prepare() {
             } else if (_parity == 1) {
                 do {
                     val = rnd.next(_range.first, _range.second);
-                } while (!(isPrime(val) && (val % 2 != 0)));
+                } while (val < 0 || !(isPrime(val) && (val % 2 != 0)));
             } else if (_parity == -1) {
                 do {
                     val = rnd.next(_range.first, _range.second);
-                } while (!(isPrime(val)));
+                } while (val < 0 || !(isPrime(val)));
             }
         } else if (_prime == -1) {
             if (_parity == 1) {
