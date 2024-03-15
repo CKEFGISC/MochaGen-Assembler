@@ -13,7 +13,7 @@ struct gen_string {
     std::string pattern = "";
     gen_string(int _len) : len(_len) {}
 
-    gen_string& palindrome();
+    gen_string& palindrome(bool is_palindrome);
     gen_string& end(std::string _endswith);
     gen_string& set_pattern(std::string _pattern);
     gen_string& prepare();

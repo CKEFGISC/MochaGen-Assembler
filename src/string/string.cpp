@@ -9,12 +9,16 @@ using std::ostream, std::endl, std::cout;
 
 namespace MochaGen {
 
-gen_string& gen_string::palindrome() {
-    is_palindrome = true;
+gen_string& gen_string::palindrome(bool _is_palindrome = false) {
+    is_palindrome = _is_palindrome;
     return *this;
 }
 
 gen_string& gen_string::set_pattern(std::string _pattern) {
+    if (_pattern.size() == 0) {
+        has_pattern = false;
+        return *this;
+    }
     has_pattern = true;
     pattern = _pattern;
     return *this;
