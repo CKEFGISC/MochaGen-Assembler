@@ -1,5 +1,3 @@
-#include "array.hpp"
-
 #include <iostream>
 #include <string>
 #include <vector>
@@ -8,8 +6,9 @@
 #include "../graph/graph.hpp"
 #include "../jngen/jngen.hpp"
 #include "../number/number.hpp"
-#include "../string/string.hpp"
+#include "../string/mcg_string.hpp"
 #include "../tree/tree.hpp"
+#include "mcg_array.hpp"
 using std::ostream, std::endl, std::cout;
 namespace MochaGen {
 

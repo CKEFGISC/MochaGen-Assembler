@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.2)
-project(array C CXX)
+project(mcg_array C CXX)
 
 set(SOURCE_FILES
-    array.cpp
-    array.hpp
+    mcg_array.cpp
+    mcg_array.hpp
 )
 
-add_library(array OBJECT ${SOURCE_FILES})
+add_library(mcg_array OBJECT ${SOURCE_FILES})
 
-install(TARGETS array DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
-install(FILES array.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})
-set_source_files_properties(array.cpp PROPERTIES COMPILE_FLAGS -DJNGEN_DECLARE_ONLY)
+install(TARGETS mcg_array DESTINATION ${ASSEMBLER_INSTALL_LIB_DIR})
+install(FILES mcg_array.hpp DESTINATION ${ASSEMBLER_INSTALL_INCLUDE_DIR})
+set_source_files_properties(mcg_array.cpp PROPERTIES COMPILE_FLAGS -DJNGEN_DECLARE_ONLY)

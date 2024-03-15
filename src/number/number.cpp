@@ -78,11 +78,11 @@ gen_number& gen_number::prepare() {
             } else if (_parity == 1) {
                 do {
                     val = rnd.next(_range.first, _range.second);
-                } while ((val < 0 || !(isPrime(val)) && (val % 2 != 0)));
+                } while ((!(isPrime(abs(val))) && (val % 2 != 0)));
             } else if (_parity == -1) {
                 do {
                     val = rnd.next(_range.first, _range.second);
-                } while (val < 0 || !(isPrime(val)));
+                } while (!(isPrime(abs(val))));
             }
         } else if (_prime == -1) {
             if (_parity == 1) {

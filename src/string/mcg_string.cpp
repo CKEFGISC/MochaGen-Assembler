@@ -1,9 +1,8 @@
-#include "string.hpp"
-
 #include <iostream>
 #include <string>
 
 #include "../jngen/jngen.hpp"
+#include "mcg_string.hpp"
 
 using std::ostream, std::endl, std::cout;
 

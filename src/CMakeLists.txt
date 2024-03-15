@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.2)
 project(MochaGen-Assembler)
 
-add_subdirectory(array)
+add_subdirectory(mcg_array)
 add_subdirectory(geometry)
 add_subdirectory(graph)
 add_subdirectory(number)
-add_subdirectory(string)
+add_subdirectory(mcg_string)
 add_subdirectory(jngen)
 add_subdirectory(tree)
 
@@ -17,11 +17,11 @@ set(LIB_SOURCE_FILES
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 add_library(assembler STATIC
-    $<TARGET_OBJECTS:array>
+    $<TARGET_OBJECTS:mcg_array>
     $<TARGET_OBJECTS:geometry>
     $<TARGET_OBJECTS:graph>
     $<TARGET_OBJECTS:number>
-    $<TARGET_OBJECTS:string>
+    $<TARGET_OBJECTS:mcg_string>
     $<TARGET_OBJECTS:jngen>
     $<TARGET_OBJECTS:tree>
     ${LIB_SOURCE_FILES}
@@ -37,5 +37,5 @@ set(SOURCE_FILES
 )
 
 add_executable(mochagen-assembler ${SOURCE_FILES})
-target_link_libraries(mochagen-assembler jngen tree array geometry graph number string)
+target_link_libraries(mochagen-assembler jngen tree mcg_array geometry graph number mcg_string)
 install(TARGETS mochagen-assembler DESTINATION ${ASSEMBLER_INSTALL_BIN_DIR})
