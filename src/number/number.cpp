@@ -1,5 +1,6 @@
 #include "number.hpp"
 
+#include <cmath>
 #include <iostream>
 #include <string>
 
@@ -53,7 +54,8 @@ gen_number& gen_number::prepare() {
         if (_parity == 2) _parity = -1;
         if (_prime == 1) {
             if (_parity == 1 || _parity == 0) {
-                val = rndm.randomPrime(fmax(2, _range.first), _range.second);
+                std::cerr << "TEST\n";
+                val = rndm.randomPrime(fmax(2, _range.first), fmax(2, _range.second));
             } else {
                 if (2 >= _range.first && 2 <= _range.second) {
                     val = 2;
@@ -78,11 +80,11 @@ gen_number& gen_number::prepare() {
             } else if (_parity == 1) {
                 do {
                     val = rnd.next(_range.first, _range.second);
-                } while ((!(isPrime(abs(val))) && (val % 2 != 0)));
+                } while ((val <= 0 || !isPrime(val)) && (val % 2 != 0));
             } else if (_parity == -1) {
                 do {
                     val = rnd.next(_range.first, _range.second);
-                } while (!(isPrime(abs(val))));
+                } while (val <= 0 || !isPrime(val));
             }
         } else if (_prime == -1) {
             if (_parity == 1) {
