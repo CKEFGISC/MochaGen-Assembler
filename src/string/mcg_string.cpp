@@ -1,8 +1,9 @@
+#include "mcg_string.hpp"
+
 #include <iostream>
 #include <string>
 
 #include "../jngen/jngen.hpp"
-#include "mcg_string.hpp"
 
 using std::ostream, std::endl, std::cout;
 
@@ -13,13 +14,13 @@ gen_string& gen_string::palindrome(bool _is_palindrome = false) {
     return *this;
 }
 
-gen_string& gen_string::set_pattern(std::string _pattern) {
+gen_string& gen_string::pattern(std::string _pattern) {
     if (_pattern.size() == 0) {
         has_pattern = false;
         return *this;
     }
     has_pattern = true;
-    pattern = _pattern;
+    pattern_str = _pattern;
     return *this;
 }
 gen_string& gen_string::end(std::string _endswith) {
@@ -31,7 +32,7 @@ gen_string& gen_string::prepare() {
         std::string half_string;
         int half_len = (len + 1) / 2;
         if (has_pattern) {
-            half_string = rnds.random(half_len, pattern);
+            half_string = rnds.random(half_len, pattern_str);
         } else {
             half_string = rnds.random(half_len);
         }
@@ -42,7 +43,7 @@ gen_string& gen_string::prepare() {
         return *this;
     } else {
         if (has_pattern) {
-            s = rnds.random(len, pattern);
+            s = rnds.random(len, pattern_str);
         } else {
             s = rnds.random(len);
         }

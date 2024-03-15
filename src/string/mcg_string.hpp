@@ -4,18 +4,20 @@
 #include <string>
 
 namespace MochaGen {
-struct gen_string {
+class gen_string {
+   public:
     std::string s;
     int len = 0;
     bool is_palindrome = false;
     std::string endswith = "\n";
     bool has_pattern = 0;
-    std::string pattern = "";
+    std::string pattern_str = "";
     gen_string(int _len) : len(_len) {}
 
     gen_string& palindrome(bool is_palindrome);
     gen_string& end(std::string _endswith);
-    gen_string& set_pattern(std::string _pattern);
+
+    gen_string& pattern(std::string _pattern);
     gen_string& prepare();
 };
 };  // namespace MochaGen
