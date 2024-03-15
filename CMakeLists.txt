@@ -4,7 +4,7 @@ cmake_policy(SET CMP0079 NEW)
 project(mochagen-assembler)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17 -O3 -Wno-error=deprecated-declarations -Wno-deprecated-declarations")
 
 # -DJNGEN_DECLARE_ONLY")
 SET(GCC_COVERAGE_COMPILE_FLAGS "--allow-multiple-definition")
